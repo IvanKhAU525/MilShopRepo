@@ -1,4 +1,4 @@
-namespace MilShop.WebUI
+namespace MilShop.Domain.Entities
 {
     using System;
     using System.Collections.Generic;
@@ -6,25 +6,25 @@ namespace MilShop.WebUI
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("TacticalEquipmentCategory")]
-    public partial class TacticalEquipmentCategory
+    public partial class Color
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TacticalEquipmentCategory()
+        public Color()
         {
-            TacticalEquipment = new HashSet<TacticalEquipment>();
+            Snikers = new HashSet<Sniker>();
         }
 
-        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Id_TacEq { get; set; }
+        public int Id { get; set; }
 
-        [StringLength(30)]
-        public string Name { get; set; }
-
-        public short? Price { get; set; }
+        [Column("Color")]
+        [StringLength(50)]
+        public string Color1 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TacticalEquipment> TacticalEquipment { get; set; }
+        public virtual ICollection<Sniker> Snikers { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<WinterJacket> WinterJackets { get; set; }
     }
 }

@@ -1,0 +1,11 @@
+﻿@model object
+
+<div class="well">
+    @{
+        dynamic _object = Model;
+        <h3>    Model - @_object.ModelName             </h3>
+        <h5>    Size -  @_object.Size1.Size1           </h5>
+        <h5>    Color - @_object.Color1.Color1         </h5>
+        <h4>    Price - @_object.Price1.Price1 (грн)   </h4>
+    }
+</div>

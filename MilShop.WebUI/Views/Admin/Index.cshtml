@@ -1,0 +1,17 @@
+﻿@using MilShop.Domain.Entities
+@model IEnumerable<Sniker>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    @foreach (var item in Model)
+    {
+        <h2>    @item.ModelName         </h2>
+        <h3>    @item.Price1.Price1     </h3>
+        <h3>    @item.Color1.Color1     </h3>
+        <h3>    @item.Size1.Size1       </h3>
+        <h3>    @item.Count             </h3>
+    }
+</div>
+

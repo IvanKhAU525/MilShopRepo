@@ -14,10 +14,31 @@ namespace MilShop.WebUI
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+                name: null,
+                url: "",
+                defaults: new {controller = "Home", action = "Index"}
+                );
+
+            routes.MapRoute(
+                name: null,
+                url: "Page{page}",
+                defaults: new { controller = "Home", action = "Index", category = (string)null },
+                constraints: new { page = @"\d+" });
+
+            routes.MapRoute(
+                name: null,
+                url: "{category}",
+                defaults: new { controller = "Home", action = "Index" });
+
+            routes.MapRoute(
+                name: null,
+                url: "{category}/Page{page}",
+                defaults: new { controller = "Home", action = "Index" },
+                constraints: new { page = @"\d+" });
+
+            routes.MapRoute(
+                name: "",
+                url: "{controller}/{action}");
         }
     }
 }

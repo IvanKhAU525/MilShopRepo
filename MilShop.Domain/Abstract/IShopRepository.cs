@@ -9,6 +9,10 @@ namespace MilShop.Domain.Abstract
 {
     public interface IShopRepository
     {
-        IEnumerable<Commodity> Goods { get; }
+        IEnumerable<Color> Colors { get; }
+        IEnumerable<Size> Sizes { get; }
+        IEnumerable<Price> Prices { get; }
+        IEnumerable<Sniker> Snikers { get; }
+        IEnumerable<WinterJacket> WinterJackets { get; }
     }
 }
