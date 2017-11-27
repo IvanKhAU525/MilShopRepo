@@ -1,0 +1,25 @@
+﻿@using MilShop.WebUI.Models
+@using MilShop.WebUI.HtmlHelpers
+@model MilShopListViewModel
+
+@{ 
+    ViewBag.Title = "Товары";
+}
+
+@{ 
+    for (int item = 0; item < Model.Table.Count(); item++)
+    {
+        <div class="well col-md-5">
+            <h2>
+                @Model.Table.ElementAt(item).ModelName
+            </h2>
+            <div>
+                <img src="~/Images/@Model.CurrentCategory/@string.Concat(item.ToString(), ".jpg")" />
+            </div>
+        </div>
+    }
+ }
+
+<div>
+    @Html.PageLinks(Model.pageInfo, x => Url.Action("HomeIndex", new { page = x, category = Model.CurrentCategory }))
+</div>

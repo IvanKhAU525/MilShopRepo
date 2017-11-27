@@ -87,6 +87,7 @@
   <ItemGroup>
     <Compile Include="Abstract\IShopRepository.cs" />
     <Compile Include="Concrete\EFMilShopRepository.cs" />
+    <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\Color.cs" />
     <Compile Include="Concrete\MilShopModel.cs" />
     <Compile Include="Entities\Price.cs" />

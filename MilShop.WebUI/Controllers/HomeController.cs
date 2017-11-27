@@ -20,10 +20,11 @@ namespace MilShop.WebUI.Controllers
             //joinedTables = rep.
         }
 
-        public ActionResult Index(string category = "Snikers", int page = 1)
+        public ActionResult HomeIndex(string category = "Snikers", int page = 1)
         {
             try
             {
+                TempData["TypeOfCommodity"] = category;
                 table = rep.GetType().GetProperty(category).GetValue(rep);
                 MilShopListViewModel model = new MilShopListViewModel()
                 {

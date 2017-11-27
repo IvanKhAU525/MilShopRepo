@@ -16,7 +16,7 @@ namespace MilShop.WebUI.Controllers
         }
 
         // GET: Admin
-        public ActionResult Index()
+        public ActionResult AdminIndex()
         {
             return View(rep.Snikers);
         }

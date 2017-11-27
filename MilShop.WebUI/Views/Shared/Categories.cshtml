@@ -1,11 +1,28 @@
 ﻿@model object
 
-<div class="well">
+<div class="well col-md-4">
     @{
         dynamic _object = Model;
-        <h3>    Model - @_object.ModelName             </h3>
-        <h5>    Size -  @_object.Size1.Size1           </h5>
-        <h5>    Color - @_object.Color1.Color1         </h5>
-        <h4>    Price - @_object.Price1.Price1 (грн)   </h4>
+        <h3>    Model - @_object.ModelName                          </h3>
+        <h5>    Size -  @_object.Size1.Size1                        </h5>
+        <h5>    Color - @_object.Color1.Color1                      </h5>
+        <h4>    Price - @_object.Price1.Price1.ToString("# грн")    </h4>
     }
+
+    @using (Html.BeginForm("DisplayingDetails", "DetailView"))
+    {
+        <div class="pull-right">
+            @Html.Hidden("commodity", Model)
+            <input type="submit" class="btn btn-success" value="Подробнее" />
+        </div>
+    }
+
+    @*@using (Html.BeginForm("AddToCart", "Cart"))
+    {
+        <div class="pull-right">
+            @Html.Hidden("commodityId", (int)_object.Id)
+            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+            <input type="submit" class="btn btn-success" value=""/>
+        </div>
+    }*@
 </div>

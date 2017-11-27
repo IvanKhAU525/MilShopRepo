@@ -16,24 +16,24 @@ namespace MilShop.WebUI
             routes.MapRoute(
                 name: null,
                 url: "",
-                defaults: new {controller = "Home", action = "Index"}
+                defaults: new {controller = "Home", action = "HomeIndex"}
                 );
 
             routes.MapRoute(
                 name: null,
                 url: "Page{page}",
-                defaults: new { controller = "Home", action = "Index", category = (string)null },
+                defaults: new { controller = "Home", action = "HomeIndex", category = (string)null },
                 constraints: new { page = @"\d+" });
 
             routes.MapRoute(
                 name: null,
                 url: "{category}",
-                defaults: new { controller = "Home", action = "Index" });
+                defaults: new { controller = "Home", action = "HomeIndex" });
 
             routes.MapRoute(
                 name: null,
                 url: "{category}/Page{page}",
-                defaults: new { controller = "Home", action = "Index" },
+                defaults: new { controller = "Home", action = "HomeIndex" },
                 constraints: new { page = @"\d+" });
 
             routes.MapRoute(
